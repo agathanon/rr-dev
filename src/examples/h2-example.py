@@ -24,6 +24,9 @@ def make_http2_request():
     ctx.check_hostname = False
     ctx.verify_mode = ssl.CERT_NONE
 
+    # Dump SSL keys to file
+    ctx.keylog_filename = 'h2-keylog.log'
+
     # Open socket and initiate TLS/SSL connection
     s = socket.create_connection((SERVER_NAME, SERVER_PORT))
     s = ctx.wrap_socket(s, server_hostname=SERVER_NAME)
