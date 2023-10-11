@@ -44,7 +44,7 @@ def make_http2_request():
         (':scheme', 'https'),
     ]
     c.send_headers(
-        stream_id=1,
+        stream_id=c.get_next_available_stream_id(),
         headers=headers,
         end_stream=True
     )
