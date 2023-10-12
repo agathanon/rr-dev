@@ -2,7 +2,7 @@
 based on observations made by cloudflare in the excellent blog: https://blog.cloudflare.com/technical-breakdown-http2-rapid-reset-ddos-attack/
 
 no clue if this actually works, but it seems to match the same behavior
-mentioned in the cloudflare blog, which seems to no longer be available
+mentioned in the blog's pcap, which seems to no longer be available
 from their blog link.
 
 ## collecting and analyzing
