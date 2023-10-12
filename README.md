@@ -19,10 +19,10 @@ docker compose up -d
 python rr.py
 ```
 
-4. decode traffic in wireshark using `ssl-keylog.log` as the ssl keyfile
+4. decode traffic in wireshark using `ssl-keylog.log` as the tls keyfile
 5. compare against the cloudflare blog notes (unless you have the pcap which seems to be gone now)
 
-## notes
+## comparison to blog article
 server advertises maximum stream concurrency of 128:
 
 ![Maximum concurrent streams](.img/maxstreams.png)
@@ -39,10 +39,15 @@ despite exceeding maximum number of advertised streams, the server never sends a
 
 > No server RST_STREAM frames are seen in this trace, indicating that the server did not observe a concurrent stream violation. 
 
-obviously to weaponize it, it will take some extra effort like implementing concurrency. but don't do
-that shit for any reason other than research. i'm saying this explicitly because
-we've seen examples of "illegal code" before. i do this solely for research, and fun of
+## disclaimer lol
+this is only a poc, so obviously more work will be needed to test it against your own infrastructure. don't do
+that shit for any reason other than research. you -- the reader -- are responsible
+for your own actions. i do this solely for research, and fun of
 course, because c'mon this shit is so interesting.
+
+prior to today, i had very minimal knowledge of http/2, so i learned a lot from this exercise.
+i kept my example code for learning basics of http/2 in python as it gives insight into my process of
+learning.
 
 ## greetz
 greetz to psyk0, shifty, and slerig. who needa stop slackin, but i still love em anyway.
