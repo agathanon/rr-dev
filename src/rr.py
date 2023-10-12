@@ -24,7 +24,7 @@ def send_rr_packets(server='localhost', port=443, max_streams=1000):
 
     headers = [
         (':method', 'GET'),
-        (':path', '/foo'),
+        (':path', '/lol'),
         (':authority', server),
         (':scheme', 'https'),
     ]
@@ -47,7 +47,7 @@ def send_rr_packets(server='localhost', port=443, max_streams=1000):
 
 
 def main():
-    send_rr_packets(server='localhost', port=443)
+    send_rr_packets(server='localhost', port=443, max_streams=1000)
 
 
 if __name__ == '__main__':
